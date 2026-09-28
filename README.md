@@ -7,12 +7,7 @@ Benchmark for LLM Enzyme Classification**.
 EC-Reason-Bench is a training-free diagnostic benchmark for enzyme EC-number
 classification with general-purpose language models.
 
-The package contains the benchmark implementation, the original CARE/PoinnCARE
-sequence tables used before construction, all 1,349 constructed test items, the
-offline retrieval cache. Experimental outputs under `out/results/` are not
-included in this GitHub release. Plotting-only code, figures, generated large tensors and graphs, private
-endpoint configuration, API credentials, logs, obsolete smoke runs, and
-unrelated post-training experiments are intentionally excluded.
+
 
 ## Package contents
 
