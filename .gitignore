@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+.env
+run/api/.env
+run/local/.env
+out/blastdb/
+out/results/*smoke*
+*.log

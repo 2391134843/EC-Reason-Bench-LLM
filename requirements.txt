@@ -1,0 +1,21 @@
+# --- Core: data construction + evaluation harness (NO API, NO GPU) ---
+numpy>=1.24
+scipy>=1.10
+# (pandas/sklearn optional; not required by the core pipeline)
+
+# --- Bioinformatics tools for real homology evidence (install via conda/bioconda) ---
+# Installed in this repo via:
+#   conda install -c bioconda -c conda-forge diamond hmmer
+# diamond>=2.2   (BLAST homology channel; ecreason/blast.py)
+# hmmer>=3.4     (phmmer homology channel; ecreason/hmmer_search.py)
+# Optional Pfam/hmmscan domain channel needs Pfam-A.hmm (~1.6GB), see hmmer_search.pfam_setup_hint()
+
+# --- Optional: evaluate CLOSED models (needs API key + network) ---
+# openai>=1.40            # for --backend openai:<model> (OpenAI-compatible APIs)
+
+# --- Optional: evaluate OPEN models (needs GPU) ---
+# torch>=2.2              # already present in this environment
+# transformers>=4.46      # for --backend hf:<model_id>
+# vllm>=0.6               # local OpenAI-compatible serving (run/local)
+#
+# Post-training (SFT/GRPO) deps are separate: see postTrain/requirements.txt
