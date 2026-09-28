@@ -1,0 +1,2 @@
+# API runner — only needs the OpenAI client (+ the core numpy/scipy from ../../requirements.txt).
+openai>=1.40
