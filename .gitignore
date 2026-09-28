@@ -6,5 +6,5 @@ __pycache__/
 run/api/.env
 run/local/.env
 out/blastdb/
-out/results/*smoke*
+out/results/
 *.log

@@ -9,8 +9,8 @@ classification with general-purpose language models.
 
 The package contains the benchmark implementation, the original CARE/PoinnCARE
 sequence tables used before construction, all 1,349 constructed test items, the
-offline retrieval cache, and the structured predictions and metrics used in the
-paper. Plotting-only code, figures, generated large tensors and graphs, private
+offline retrieval cache. Experimental outputs under `out/results/` are not
+included in this GitHub release. Plotting-only code, figures, generated large tensors and graphs, private
 endpoint configuration, API credentials, logs, obsolete smoke runs, and
 unrelated post-training experiments are intentionally excluded.
 
@@ -22,8 +22,7 @@ unrelated post-training experiments are intentionally excluded.
 ├── out/
 │   ├── ec_tree.json       EC tree with 4,963 valid leaves
 │   ├── items/             Four benchmark splits and dataset metadata
-│   ├── evidence/          Precomputed offline evidence for five channels
-│   └── results/           Final structured predictions, metrics, and summaries
+│   └── evidence/          Precomputed offline evidence for five channels
 ├── run/
 │   ├── api/               OpenAI-compatible API launchers
 │   └── local/             Hugging Face and vLLM launchers
@@ -41,7 +40,7 @@ The two data layers are intentionally separate:
 - `sourcedata/data/` contains the unmodified, pre-construction sequence tables
   and EC snapshot. It retains upstream accession identifiers so the benchmark
   items can be rebuilt.
-- `out/items/`, `out/evidence/`, and `out/results/` are the constructed release
+- `out/items/` and `out/evidence/` are the constructed release
   artifacts. Their query and retrieval identifiers are pseudonymized.
 
 ## Quick verification
@@ -52,7 +51,7 @@ Python 3.10 or newer is recommended.
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-python scripts/verify_release.py
+shasum -a 256 -c metadata/MANIFEST.sha256
 ```
 
 Run a small offline smoke test with the deterministic mock backend:
@@ -68,11 +67,12 @@ python -m ecreason.run_eval \
 
 The mock backend verifies the pipeline only; it is not a scientific baseline.
 
-## Reproduce the reported aggregate metrics
+## Summarize your evaluation results
 
 The final evaluation was run in two complete passes per condition: the `30` and
 `30-50` splits (`big`, 992 items), followed by `price` and `promiscuous`
-(`small`, 357 items). Recompute each model summary without making any API calls:
+(`small`, 357 items). After running inference to generate predictions under
+`out/results/`, summarize each model with:
 
 ```bash
 python -m ecreason.summarize --prefix ds_    --out summary_ds    --title deepseek-v4-pro
@@ -82,8 +82,8 @@ python -m ecreason.summarize --prefix g31_   --out summary_g31   --title gemini-
 python -m ecreason.summarize --prefix glm52_ --out summary_glm52 --title glm-5.2
 ```
 
-The generated JSON summaries are the machine-readable source for the paper's
-main and appendix tables.
+These commands require locally generated predictions; saved experimental results
+are not distributed in this repository.
 
 ## Run a model
 
