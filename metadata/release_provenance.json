@@ -1,0 +1,18 @@
+{
+  "benchmark": "EC-Reason-Bench",
+  "esm_topk": 5,
+  "experimental_results_included": false,
+  "generated_large_intermediates_included": false,
+  "n_items": 1349,
+  "prediction_free_text_removed": true,
+  "pseudonymization": "SHA-256 namespaced identifiers, 12 hexadecimal characters",
+  "raw_preconstruction_data_included": true,
+  "raw_test_items": 1349,
+  "raw_training_items": 28182,
+  "splits": {
+    "30": 432,
+    "30-50": 560,
+    "price": 148,
+    "promiscuous": 209
+  }
+}
