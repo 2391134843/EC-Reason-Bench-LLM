@@ -1,0 +1,5 @@
+# Local-deployment runner. torch is already present in this environment.
+vllm>=0.6              # fast OpenAI-compatible server (recommended path)
+transformers>=4.46     # for the direct hf backend (run_eval_hf.sh)
+accelerate>=0.34
+openai>=1.40           # client used to talk to the local vLLM server
