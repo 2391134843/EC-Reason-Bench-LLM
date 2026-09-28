@@ -51,6 +51,7 @@ Python 3.10 or newer is recommended.
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+chmod +x run/api/*.sh run/local/*.sh
 shasum -a 256 -c metadata/MANIFEST.sha256
 ```
 
