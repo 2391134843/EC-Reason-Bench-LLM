@@ -1,0 +1,44 @@
+{
+  "30": {
+    "n_items": 432,
+    "n_multilabel": 0,
+    "difficulty_bins": {
+      "D1": 14,
+      "D2": 74,
+      "D3": 116,
+      "D4": 127,
+      "D5": 101
+    }
+  },
+  "30-50": {
+    "n_items": 560,
+    "n_multilabel": 0,
+    "difficulty_bins": {
+      "D1": 256,
+      "D2": 182,
+      "D3": 83,
+      "D4": 31,
+      "D5": 8
+    }
+  },
+  "price": {
+    "n_items": 148,
+    "n_multilabel": 3,
+    "difficulty_bins": {
+      "D2": 4,
+      "D3": 28,
+      "D4": 52,
+      "D5": 64
+    }
+  },
+  "promiscuous": {
+    "n_items": 209,
+    "n_multilabel": 209,
+    "difficulty_bins": {
+      "D2": 10,
+      "D3": 43,
+      "D4": 60,
+      "D5": 96
+    }
+  }
+}
